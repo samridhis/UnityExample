@@ -1,0 +1,30 @@
+﻿@using BookIOC.Models
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="~/Views/Shared/_Layout.cshtml">~/Views/Shared/_Layout.cshtml</a>
+<h2>Index</h2>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th width="50px">Id</th>
+            <th width="250px">Name</th>
+            <th width="250px">Category</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var v in (IEnumerable<Company>)ViewBag.data)
+            {
+                <tr>
+                    <td>@v.Id</td>
+                    <td>@v.Name</td>
+                    <td>@v.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
